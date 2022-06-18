@@ -15,7 +15,9 @@ def plot_actualdata(X,Y,x_test_1,y_test_1,x_test_2,y_test_2):
     sns.despine()
     # plt.show()
 
-def calibration_regression(mean,sigma,Y):
+def calibration_regression(mean,sigma,Y,ax=None):
+    if ax is None:
+      fig,ax = plt.subplots()
     df = pd.DataFrame()
     df['mean']=mean
     df['sigma']=sigma
